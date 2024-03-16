@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Card from './Card'
 import CreateTodoModal from './CreateTodoModal'
 
@@ -10,12 +10,13 @@ const Mylogs = () => {
         setOpenCreateTodo(false);
     }
 
-    fetch('http://localhost:8000/todos')
-        .then(async (response) => {
-            const data = await response.json()
-            setTodos(data.todos);
-        })
-
+    useEffect(() => {
+        fetch('http://localhost:8000/todos')
+            .then(async (response) => {
+                const data = await response.json()
+                setTodos(data.todos);
+            })
+    }, []);
 
     return (
         <>

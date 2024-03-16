@@ -15,9 +15,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .fill-opacity-50 {
   fill-opacity: 50%;
 }
+
 .fill-opacity-50:hover {
   fill-opacity: 70%;
 }
