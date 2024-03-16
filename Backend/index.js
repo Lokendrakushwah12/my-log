@@ -4,13 +4,16 @@ const { createTodo, updateTodo } = require('./types');
 const { Todo } = require('./db');
 const port = 3000;
 
-app.use(express.json());
+app.use(express.json()); // for parsing application/json
 
 app.post('/todo', async (req, res) => {
+    
     const Payload = createTodo.safeParse(req.body); // validate the request body
+    console.log(Payload);
     if (!Payload.success) {
         res.status(411).json({
             msg: 'Invalid data',
+            error: Payload.error.toString() // Include the error message
         })
         return;
     }
