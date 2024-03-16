@@ -17,12 +17,10 @@ const mylogs = () => {
                     <rect x="0.5" width="943" height="1" fill="#D9D9D9" />
                 </svg>
                 <div className="flex flex-wrap gap-5">
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
+                    <Card head="Create a crypto landing page" deadline="24th Nov" />
+                    <Card head="Design a Website landing page" deadline="12th March" />
+                    <Card head="Create a crypto landing page" deadline="24th Nov" />
+                    <Card head="Create a crypto landing page" deadline="24th Nov" />
                 </div>
             </div>
         </>
