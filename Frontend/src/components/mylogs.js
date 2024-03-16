@@ -10,12 +10,11 @@ const Mylogs = () => {
         setOpenCreateTodo(false);
     }
 
-    // fetch('http://localhost:8000/todos')
-    //     .then(async (response) => {
-    //         const data = await response.json()
-    //         console.log(data)
-    //         setTodos(data)
-    //     })
+    fetch('http://localhost:8000/todos')
+        .then(async (response) => {
+            const data = await response.json()
+            setTodos(data.todos);
+        })
 
 
     return (
@@ -33,7 +32,7 @@ const Mylogs = () => {
                     <rect x="0.5" width="943" height="1" fill="#D9D9D9" />
                 </svg>
                 <div className="flex flex-wrap gap-5">
-                    <Card Todos={[Todos]} />
+                    <Card Todos={Todos} />
                 </div>
             </div>
         </>

@@ -14,22 +14,23 @@ const CreateTodoModal = ({ closeModal }) => {
     }, []);
 
     const fetchTodo = () => {
-        fetch('http://localhost:8000/todos',{
+        fetch('http://localhost:8000/todo', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                title: heading,
-                description: 'description',
+                heading: heading,
+                description: description,
                 deadline: deadline
             })
-        
+
         })
-        .then(async (response) => {
-            const data = await response.json()
-            alert(data)
-        })
+            .then(async (response) => {
+                const data = await response.json()
+                console.log(data);
+                alert("todo created successfully")
+            })
     }
 
     const setHeadingValue = (e) => {
@@ -40,6 +41,7 @@ const CreateTodoModal = ({ closeModal }) => {
     }
     const setDeadlineValue = (e) => {
         setDeadline(e.target.value);
+        console.log(e.target.value);
     }
 
     return (
@@ -47,13 +49,13 @@ const CreateTodoModal = ({ closeModal }) => {
             <div className="bg-white p-2 rounded-lg flex flex-col gap-4">
                 <h2 className='font-medium text-[24px] text-[#2B2B2B]'>Create a new Log</h2>
                 <div className="flex flex-col gap-4 w-[400px]">
-                    <input type="text" placeholder="Title" className="border p-2 rounded-md focus:border-[#c9c9c9] outline-none" />
-                    <input type="text" placeholder="Description" className="border p-2 rounded-md focus:border-[#c9c9c9] outline-none" />
-                    <input type="date" placeholder="Deadline" className="border p-2 rounded-md focus:border-[#c9c9c9] outline-none" />
+                    <input type="text" onChange={setHeadingValue} placeholder="Title" className="border p-2 rounded-md focus:border-[#c9c9c9] outline-none" />
+                    <input type="text" onChange={setDescriptionValue} placeholder="Description" className="border p-2 rounded-md focus:border-[#c9c9c9] outline-none" />
+                    <input type="date" onChange={setDeadlineValue} placeholder="Deadline" className="border p-2 rounded-md focus:border-[#c9c9c9] outline-none" />
                 </div>
                 <div className="flex gap-4 justify-end">
-                    <button onClick={closeModal} onChange={setDeadlineValue} className="border py-1 px-2 rounded-md">Cancel</button>
-                    <button onClick={ fetchTodo } onChange={setDeadlineValue} className="border py-1 px-2 rounded-md bg-[#2B2B2B] text-white">Create</button>
+                    <button onClick={closeModal} className="border py-1 px-2 rounded-md">Cancel</button>
+                    <button onClick={() => { fetchTodo(); closeModal(); }} className="border py-1 px-2 rounded-md bg-[#2B2B2B] text-white">Create</button>
                 </div>
             </div>
         </div >
