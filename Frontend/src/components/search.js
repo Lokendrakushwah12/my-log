@@ -1,6 +1,6 @@
 import React from 'react'
 
-const search = () => {
+const Search = () => {
 
   return (
     <>
@@ -18,4 +18,4 @@ const search = () => {
   )
 }
 
-export default search
+export default Search

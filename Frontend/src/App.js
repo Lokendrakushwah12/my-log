@@ -1,7 +1,7 @@
 import './style.css';
-import Nav from './components/nav.js';
-import Search from './components/search.js';
-import Mylogs from './components/mylogs.js';
+import Nav from './components/Nav.js';
+import Search from './components/Search.js';
+import Mylogs from './components/Mylogs.js';
 
 function App() {
 

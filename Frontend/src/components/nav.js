@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Avatar from '../assets/Avatar.png';
+import CreateTodoModal from './CreateTodoModal';
 
-const nav = () => {
+const Nav = () => {
+    const [OpenCreateTodo, setOpenCreateTodo] = useState(false);
+    const closeModal = () => {
+        setOpenCreateTodo(false);
+    }
 
     return (
         <>
+            {OpenCreateTodo && <CreateTodoModal closeModal={closeModal} />}
             <div className="w-[200px] overflow-hidden h-screen p-3 border-r flex flex-col justify-between" >
                 {/* top part */}
                 <div className="flex items-start gap-12 flex-col w-[180px]">
@@ -17,7 +23,7 @@ const nav = () => {
                         </div>
                     </div>
                     <div className="flex flex-col gap-[6px] items-start justify-center">
-                        <div className="flex flex-row items-center gap-4 w-[180px] p-3 rounded hover:bg-[#f0f3f5] cursor-pointer">
+                        <div onClick={() => setOpenCreateTodo(true)} className="flex flex-row items-center gap-4 w-[180px] p-3 rounded hover:bg-[#f0f3f5] cursor-pointer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                 <rect x="8.57159" width="2.85714" height="20" fill="#2B2B2B" />
                                 <rect y="11.4287" width="2.85715" height="20" transform="rotate(-90 0 11.4287)" fill="#2B2B2B" />
@@ -70,4 +76,4 @@ const nav = () => {
     )
 }
 
-export default nav
+export default Nav
