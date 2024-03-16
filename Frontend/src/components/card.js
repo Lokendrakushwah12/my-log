@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Card = ({ Todos }) => {
 
@@ -16,14 +16,15 @@ const Card = ({ Todos }) => {
         ];
         return colors[Math.floor(Math.random() * colors.length)];
     };
-
+    
     return (
         <>
+
             {Todos.map((todo) => {
-                const { title, description, deadline } = todo
+                const cardColors = getRandomColor();
 
                 return (
-                    <div className={`flex w-[300px] h-[150px] p-2 items-start gap-[10px] ${getRandomColor()} rounded-xl shadow-md shadow-[#00000010] border-[2px] border-[#ffffff50]`}>
+                    <div className={`flex w-[300px] h-[150px] p-2 items-start gap-[10px] ${cardColors} rounded-xl shadow-md shadow-[#00000010] border-[2px] border-[#ffffff50]`}>
                         <div className="flex w-full h-full flex-col items-start justify-between">
                             <div className="flex w-full flex-row justify-between items-center">
                                 {/* heading of to do */}

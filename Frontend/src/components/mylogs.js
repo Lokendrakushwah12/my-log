@@ -10,13 +10,17 @@ const Mylogs = () => {
         setOpenCreateTodo(false);
     }
 
-    useEffect(() => {
-        fetch('http://localhost:8000/todos')
+    const fetchTodos = async () => {
+        await fetch('http://localhost:8000/todos')
             .then(async (response) => {
-                const data = await response.json()
+                const data = await response.json();
+                console.log("fetched", Todos)
                 setTodos(data.todos);
             })
-    }, []);
+    }
+    useEffect(() => {
+        fetchTodos();
+    }, [1]);
 
     return (
         <>

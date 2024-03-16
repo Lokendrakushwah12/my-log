@@ -19,6 +19,7 @@ app.post('/todo', async (req, res) => {
         })
         return;
     }
+
     // put the data in the mongodb
     await Todo.create({
         heading: req.body.heading,

@@ -9,7 +9,7 @@ function App() {
     <>
       <div className="flex">
         <Nav />
-        <div className="flex w-[1320px] flex-col justify-center items-center gap-8">
+        <div className="flex w-[1320px] flex-col justify-start pt-12 items-center gap-8">
           <Search />
           <Mylogs />
         </div>
