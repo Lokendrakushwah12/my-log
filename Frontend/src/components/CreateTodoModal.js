@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 // import Mylogs from './mylogs';
 
-const CreateTodoModal = ({ closeModal }) => {
+const CreateTodoModal = ({ closeModal, updateTodos }) => {
     // react-query
     const [heading, setHeading] = useState('');
     const [description, setDescription] = useState('');
@@ -16,7 +16,7 @@ const CreateTodoModal = ({ closeModal }) => {
         }
     }, []);
 
-    const fetchTodo = () => {
+    const fetchTodo = async () => {
         if (!heading.trim()) {
             setHeadingError(true);
             return;
@@ -31,7 +31,7 @@ const CreateTodoModal = ({ closeModal }) => {
             setDeadlineError(false);
         }
 
-        fetch('http://localhost:8000/todo', {
+        await fetch('http://localhost:8000/todo', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -47,6 +47,7 @@ const CreateTodoModal = ({ closeModal }) => {
                 const data = await response.json();
                 console.log(data);
                 if (response.ok) {
+                    // updateTodos();
                     closeModal();
                 }
             })

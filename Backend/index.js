@@ -45,9 +45,11 @@ app.get('/todos', async (req, res) => {
 
 app.put('/completed', async (req, res) => {
     const Payload = updateTodo.safeParse(req.body); // validate the request body
+
     if (!Payload.success) {
         res.status(411).json({
             msg: 'Invalid data',
+            error: Payload.error.toString() // Include the error message
         })
         return;
     }
@@ -56,6 +58,27 @@ app.put('/completed', async (req, res) => {
         _id: req.body.id
     }, {
         isCompleted: true
+    });
+});
+
+// delete
+app.delete('/delete', async (req, res) => {
+    const Payload = updateTodo.safeParse(req.body); // validate the request body
+
+    if (!Payload.success) {
+        res.status(411).json({
+            msg: 'Invalid data',
+            error: Payload.error.toString() // Include the error message
+        })
+        return;
+    }
+    // delete the todo from the mongodb
+    await Todo.deleteOne({
+        _id: req.body.id
+    });
+
+    res.json({
+        msg: 'Todo deleted successfully'
     });
 });
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Card from './Card'
 import CreateTodoModal from './CreateTodoModal'
-
+let cnt = 0;
 const Mylogs = () => {
     const [OpenCreateTodo, setOpenCreateTodo] = useState(false);
     const [Todos, setTodos] = useState([]);
@@ -14,17 +14,21 @@ const Mylogs = () => {
         await fetch('http://localhost:8000/todos')
             .then(async (response) => {
                 const data = await response.json();
-                console.log("fetched", Todos)
+                console.log(cnt++)
                 setTodos(data.todos);
             })
     }
     useEffect(() => {
         fetchTodos();
-    }, [1]);
+    }, []);
+
+    const updateTodos = () => {
+        fetchTodos();
+    }
 
     return (
         <>
-            {OpenCreateTodo && <CreateTodoModal closeModal={closeModal} />}
+            {OpenCreateTodo && <CreateTodoModal closeModal={closeModal} updateTodos={updateTodos} />}
             <div className="flex flex-col p-6 w-[990px] gap-4 rounded-xl border items-start">
                 <div className="head flex justify-between w-full items-center">
                     <h2 className='font-medium text-[24px] text-[#2B2B2B]'>my logs</h2>
@@ -37,7 +41,7 @@ const Mylogs = () => {
                     <rect x="0.5" width="943" height="1" fill="#D9D9D9" />
                 </svg>
                 <div className="flex flex-wrap gap-5">
-                    <Card Todos={Todos} />
+                    <Card Todos={Todos} updateTodos={updateTodos} />
                 </div>
             </div>
         </>
