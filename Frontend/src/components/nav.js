@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import Avatar from '../assets/Avatar.png';
 import CreateTodoModal from './CreateTodoModal';
 
@@ -15,12 +16,14 @@ const Nav = () => {
                 {/* top part */}
                 <div className="flex items-start gap-12 flex-col w-[180px]">
                     <div className="head flex flex-row gap-[6px] p-3">
-                        <div className="flex items-center justify-center gap-2 cursor-pointer">
-                            <svg className='h-[30px] w-[30px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.6 0C0.716344 0 0 0.716343 0 1.6V38.4C0 39.2837 0.716343 40 1.6 40H38.4C39.2837 40 40 39.2837 40 38.4V1.6C40 0.716344 39.2837 0 38.4 0H1.6ZM9.99329 24.4767C10.039 24.1263 10.1939 23.8064 10.444 23.5567C12.4544 21.5497 21.9249 12.0942 26.473 7.53176C27.0981 6.90468 28.1085 6.9085 28.7346 7.53459L32.1255 10.9255C32.7503 11.5503 32.7503 12.5634 32.1255 13.1882L16.1054 29.2083C15.8559 29.4578 15.5309 29.6179 15.181 29.6635L9.73088 30.3744C9.47047 30.4083 9.24854 30.1864 9.2825 29.926L9.99329 24.4767Z" fill="#2B2B2B" />
-                            </svg>
-                            <h1 className='font-semibold text-2xl text-[#2B2B2B]'>ml</h1>
-                        </div>
+                        <Link to="/">
+                            <div className="flex items-center justify-center gap-2 cursor-pointer">
+                                <svg className='h-[30px] w-[30px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.6 0C0.716344 0 0 0.716343 0 1.6V38.4C0 39.2837 0.716343 40 1.6 40H38.4C39.2837 40 40 39.2837 40 38.4V1.6C40 0.716344 39.2837 0 38.4 0H1.6ZM9.99329 24.4767C10.039 24.1263 10.1939 23.8064 10.444 23.5567C12.4544 21.5497 21.9249 12.0942 26.473 7.53176C27.0981 6.90468 28.1085 6.9085 28.7346 7.53459L32.1255 10.9255C32.7503 11.5503 32.7503 12.5634 32.1255 13.1882L16.1054 29.2083C15.8559 29.4578 15.5309 29.6179 15.181 29.6635L9.73088 30.3744C9.47047 30.4083 9.24854 30.1864 9.2825 29.926L9.99329 24.4767Z" fill="#2B2B2B" />
+                                </svg>
+                                <h1 className='font-semibold text-2xl text-[#2B2B2B]'>ml</h1>
+                            </div>
+                        </Link>
                     </div>
                     <div className="flex flex-col gap-[6px] items-start justify-center">
                         <div onClick={() => setOpenCreateTodo(true)} className="flex flex-row items-center gap-4 w-[180px] p-3 rounded hover:bg-[#f0f3f5] cursor-pointer">
@@ -30,19 +33,23 @@ const Nav = () => {
                             </svg>
                             <h2 className='font-medium text-[20px] text-[#2B2B2B]'>Create log</h2>
                         </div>
-                        <div className="flex flex-row items-center gap-4 w-[180px] p-3 rounded hover:bg-[#f0f3f5] cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.07088 0.413805C9.53271 -0.0993327 10.3231 -0.140931 10.8362 0.320893C11.3493 0.782717 11.3909 1.57308 10.9291 2.08622L5.30412 8.33622C4.82503 8.86854 3.99752 8.8903 3.49112 8.38389L0.366117 5.25889C-0.122039 4.77074 -0.122039 3.97928 0.366117 3.49113C0.854272 3.00297 1.64573 3.00297 2.13388 3.49113L4.32726 5.6845L9.07088 0.413805ZM20 12.5C20 11.8097 19.4404 11.25 18.75 11.25H3.75L3.60422 11.2584C2.98255 11.3306 2.5 11.859 2.5 12.5C2.5 13.1904 3.05964 13.75 3.75 13.75H18.75L18.8958 13.7416C19.5174 13.6694 20 13.1411 20 12.5ZM20 18.75C20 18.0597 19.4404 17.5 18.75 17.5H3.75L3.60422 17.5084C2.98255 17.5806 2.5 18.109 2.5 18.75C2.5 19.4404 3.05964 20 3.75 20H18.75L18.8958 19.9916C19.5174 19.9194 20 19.3911 20 18.75ZM18.75 5.00001H12.5L12.3542 5.00842C11.7325 5.08063 11.25 5.60897 11.25 6.25001C11.25 6.94037 11.8096 7.50001 12.5 7.50001H18.75L18.8958 7.4916C19.5174 7.41939 20 6.89106 20 6.25001C20 5.55965 19.4404 5.00001 18.75 5.00001Z" fill="#2B2B2B" />
-                            </svg>
-                            <h2 className='font-medium text-[20px] text-[#2B2B2B]'>Task</h2>
-                        </div>
-                        <div className="flex flex-row items-center gap-4 w-[180px] p-3 rounded hover:bg-[#f0f3f5] cursor-pointer">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.833333" y="0.833333" width="18.3333" height="18.3333" rx="9.16667" stroke="#2B2B2B" stroke-width="1.66667" />
-                                <path d="M14.0103 7.44812L8.90609 12.5521L6.354 10.0002" stroke="#2B2B2B" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <h2 className='font-medium text-[20px] text-[#2B2B2B]'>Completed</h2>
-                        </div>
+                        <Link to="/tasks">
+                            <div className="flex flex-row items-center gap-4 w-[180px] p-3 rounded hover:bg-[#f0f3f5] cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.07088 0.413805C9.53271 -0.0993327 10.3231 -0.140931 10.8362 0.320893C11.3493 0.782717 11.3909 1.57308 10.9291 2.08622L5.30412 8.33622C4.82503 8.86854 3.99752 8.8903 3.49112 8.38389L0.366117 5.25889C-0.122039 4.77074 -0.122039 3.97928 0.366117 3.49113C0.854272 3.00297 1.64573 3.00297 2.13388 3.49113L4.32726 5.6845L9.07088 0.413805ZM20 12.5C20 11.8097 19.4404 11.25 18.75 11.25H3.75L3.60422 11.2584C2.98255 11.3306 2.5 11.859 2.5 12.5C2.5 13.1904 3.05964 13.75 3.75 13.75H18.75L18.8958 13.7416C19.5174 13.6694 20 13.1411 20 12.5ZM20 18.75C20 18.0597 19.4404 17.5 18.75 17.5H3.75L3.60422 17.5084C2.98255 17.5806 2.5 18.109 2.5 18.75C2.5 19.4404 3.05964 20 3.75 20H18.75L18.8958 19.9916C19.5174 19.9194 20 19.3911 20 18.75ZM18.75 5.00001H12.5L12.3542 5.00842C11.7325 5.08063 11.25 5.60897 11.25 6.25001C11.25 6.94037 11.8096 7.50001 12.5 7.50001H18.75L18.8958 7.4916C19.5174 7.41939 20 6.89106 20 6.25001C20 5.55965 19.4404 5.00001 18.75 5.00001Z" fill="#2B2B2B" />
+                                </svg>
+                                <h2 className='font-medium text-[20px] text-[#2B2B2B]'>Task</h2>
+                            </div>
+                        </Link>
+                        <Link to="/completed">
+                            <div className="flex flex-row items-center gap-4 w-[180px] p-3 rounded hover:bg-[#f0f3f5] cursor-pointer">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.833333" y="0.833333" width="18.3333" height="18.3333" rx="9.16667" stroke="#2B2B2B" stroke-width="1.66667" />
+                                    <path d="M14.0103 7.44812L8.90609 12.5521L6.354 10.0002" stroke="#2B2B2B" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <h2 className='font-medium text-[20px] text-[#2B2B2B]'>Completed</h2>
+                            </div>
+                        </Link>
                     </div>
                 </div>
 
