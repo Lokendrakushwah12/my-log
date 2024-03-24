@@ -30,8 +30,8 @@ const Mylogs = () => {
 
     return (
         <>
-           
-                {OpenCreateTodo && <CreateTodoModal closeModal={closeModal} updateTodos={updateTodos} />}
+
+            {OpenCreateTodo && <CreateTodoModal closeModal={closeModal} updateTodos={updateTodos} />}
             <div className="flex flex-col p-6 w-[990px] gap-4 rounded-xl border items-start">
                 <div className="head flex justify-between w-full items-center">
                     <h2 className='font-medium text-[24px] text-[#2B2B2B]'>my logs</h2>
