@@ -16,7 +16,6 @@ const Mylogs = () => {
         await fetch('http://localhost:8000/todos')
             .then(async (response) => {
                 const data = await response.json();
-                console.log(cnt++)
                 setTodos(data.todos);
             })
     }
@@ -44,7 +43,9 @@ const Mylogs = () => {
                     <rect x="0.5" width="943" height="1" fill="#D9D9D9" />
                 </svg>
                 <div className="flex flex-wrap gap-5">
-                    <Card Todos={Todos} updateTodos={updateTodos} />
+                    {Todos.map((todo, index) => (
+                        <Card index={index} todo={todo} updateTodos={updateTodos} />
+                    ))}
                 </div>
             </div>
         </>

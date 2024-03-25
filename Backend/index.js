@@ -9,7 +9,7 @@ app.use(express.json()); // for parsing application/json
 app.use(cors());
 
 app.post('/todo', async (req, res) => {
-    
+
     const Payload = createTodo.safeParse(req.body); // validate the request body
     console.log(Payload);
     if (!Payload.success) {
@@ -36,6 +36,16 @@ app.post('/todo', async (req, res) => {
 app.get('/todos', async (req, res) => {
     const todos = await Todo.find({
         isCompleted: false
+    }); // get all the todos from the mongodb
+
+    res.json({
+        todos
+    });
+});
+
+app.get('/all', async (req, res) => {
+    const todos = await Todo.find({
+        isCompleted: true
     }); // get all the todos from the mongodb
 
     res.json({
