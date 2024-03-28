@@ -4,6 +4,7 @@ import './style.css';
 import Nav from './components/Nav.js';
 import Search from './components/Search.js';
 import Mylogs from './components/Mylogs.js';
+import Pending from './components/Pending.js';
 import Completed from './components/Completed.js';
 
 function App() {
@@ -12,10 +13,11 @@ function App() {
     <Router>
       <div className="flex">
         <Nav />
-        <div className="flex w-[1320px] flex-col justify-start pt-12 items-center gap-8">
+        <div className="flex w-full ml-[120px] flex-col justify-start pt-12 items-center gap-8">
           <Search />
           <Routes>
-            <Route path="/tasks" element={<Mylogs />} />
+            <Route path="/" element={<Mylogs />} />
+            <Route path="/tasks" element={<Pending />} />
             <Route path="/completed" element={<Completed />} />
           </Routes>
           {/* <Mylogs /> */}
