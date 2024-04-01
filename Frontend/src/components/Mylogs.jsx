@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Card from './Card'
-import CreateTodoModal from './CreateTodoModal'
-import Pending from './Pending';
-import Completed from './Completed';
+import Card from './Card.jsx'
+import CreateTodoModal from './CreateTodoModal.jsx'
+import Pending from './Pending.jsx';
+import Completed from './Completed.jsx';
 
 const Mylogs = () => {
     const [OpenCreateTodo, setOpenCreateTodo] = useState(false);
