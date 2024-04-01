@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './style.css';
-import Nav from './components/Nav.js';
-import Search from './components/Search.js';
-import Mylogs from './components/Mylogs.js';
-import Pending from './components/Pending.js';
-import Completed from './components/Completed.js';
+import Nav from '../src/components/Nav.js';
+import Search from '../src/components/Search.js';
+import Mylogs from '../src/components/Mylogs.js';
+import Pending from '../src/components/Pending.js';
+import Completed from '../src/components/Completed.js';
 
 function App() {
 
