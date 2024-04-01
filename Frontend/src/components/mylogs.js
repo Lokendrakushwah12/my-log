@@ -13,7 +13,7 @@ const Mylogs = () => {
     }
 
     const fetchTodos = async () => {
-        await fetch('http://localhost:8000/todos')
+        await fetch('https://my-log-backend.onrender.com/todos')
             .then(async (response) => {
                 const data = await response.json();
                 setTodos(data.todos);

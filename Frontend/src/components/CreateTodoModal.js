@@ -32,7 +32,7 @@ const CreateTodoModal = ({ closeModal, updateTodos }) => {
             setDeadlineError(false);
         }
 
-        await fetch('http://localhost:8000/todo', {
+        await fetch('https://my-log-backend.onrender.com/todo', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

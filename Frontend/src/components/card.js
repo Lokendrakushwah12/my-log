@@ -19,7 +19,7 @@ const Card = ({ todo, index, updateTodos, bg }) => {
 
     const handleComplete = async (id) => {
         console.log(id);
-        await fetch('http://localhost:8000/completed', {
+        await fetch('https://my-log-backend.onrender.com/completed', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const Card = ({ todo, index, updateTodos, bg }) => {
     }
 
     const handleDelete = async (id) => {
-        await fetch('http://localhost:8000/delete', {
+        await fetch('https://my-log-backend.onrender.com/delete', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

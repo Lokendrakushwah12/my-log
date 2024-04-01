@@ -6,7 +6,7 @@ const Completed = () => {
     const [Todos, setTodos] = useState([]);
 
     const fetchTodos = async () => {
-        await fetch('http://localhost:8000/all')
+        await fetch('https://my-log-backend.onrender.com/all')
             .then(async (response) => {
                 const data = await response.json();
                 setTodos(data.todos);
