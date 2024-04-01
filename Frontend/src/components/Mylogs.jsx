@@ -31,7 +31,7 @@ const Mylogs = () => {
         <>
 
             {OpenCreateTodo && <CreateTodoModal closeModal={closeModal} updateTodos={updateTodos} />}
-            <div className="flex flex-row w-[750px] gap-5 items-start">
+            <div className="flex flex-row w-[750px] grp gap-5 items-start">
                 <Pending />
                 <Completed />
             </div>

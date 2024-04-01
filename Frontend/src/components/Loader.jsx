@@ -16,9 +16,9 @@ const Loader = () => {
             ></motion.div>
         </div> */}
             {shimmerLoaders.map((_, index) => (
-                <div key={index} className="shimmer-loader animate-pulse flex w-[300px] h-[150px] p-2 items-start gap-[10px] rounded-xl shadow-lg shadow-[#00000010] border-[2px] border-[#ffffff50] bg-gradient-to-tr from-[#fff] via-[#e9e9e9] to-[#fff]">
+                <div key={index} className="shimmer-loader animate-pulse flex w-[300px] cards h-[150px] p-2 items-start gap-[10px] rounded-xl shadow-lg shadow-[#00000010] border-[2px] border-[#ffffff50] bg-gradient-to-tr from-[#fff] via-[#e9e9e9] to-[#fff]">
                     <div className="flex w-full h-full flex-col items-start justify-between">
-                        <div className="flex w-full flex-row justify-between items-center">
+                        <div className="flex w-full flex-row justify-between items-center mb-2">
                             {/* heading of to do */}
                             <h2 className='font-medium text-[20px] text-[#2B2B2B] rounded-sm w-44 h-6 bg-gradient-to-tr from-[#eee] via-[#d9d9d9] to-[#eee]'></h2>
                             {/* tick svg */}
@@ -27,13 +27,7 @@ const Loader = () => {
                             </svg>
                         </div>
                         <h4 className='font-normal h-[65px] overflow-hidden text-[14px] text-[#000] opacity-70  rounded-sm w-full bg-gradient-to-tr from-[#eee] via-[#d9d9d9] to-[#eee]'></h4>
-                        {/* <svg className='cursor-pointer fill-opacity-50' xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.6936 4.27934L12.2207 0.806445L12.3078 0.71926C13.2669 -0.239753 14.8217 -0.239753 15.7807 0.71926C16.7398 1.67827 16.7398 3.23314 15.7807 4.19216L15.6936 4.27934ZM14.2793 5.69355L5.01476 14.9581L0.5 16L1.54187 11.4852L10.8064 2.22066L14.2793 5.69355Z" fill="black" />
-                                </svg> */}
-                        {/* line svg */}
-                        <svg width="276" height="1" viewBox="0 0 944 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.5" width="943" height="1" fill="#212121" />
-                        </svg>
+                        <div className='w-full h-[0.5px] bg-[#00000037] my-2' ></div>
                         <div className="flex flex-row w-full justify-between items-center">
                             <h4 className='font-normal text-[14px] text-[#000] opacity-70 w-24 h-full  bg-gradient-to-tr from-[#eee] via-[#d9d9d9] to-[#eee]'></h4>
                             {/* delete svg */}

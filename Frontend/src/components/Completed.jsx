@@ -40,7 +40,7 @@ const Completed = () => {
     return (
         <>
 
-            <div className="flex flex-col p-6 w-[1000px] gap-4 rounded-xl border items-start bg-[#f4f5f6]">
+            <div className="flex flex-col p-6 w-full  max-w-[1000px] grp gap-4 rounded-xl border items-start bg-[#f4f5f6]">
                 <div className="head flex justify-between items-center">
                     <h2 className='font-medium text-[24px] text-[#2B2B2B]'>Completed</h2>
                     {/* <svg onClick={() => setOpenCreateTodo(true)} className='cursor-pointer' xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
@@ -49,7 +49,7 @@ const Completed = () => {
                     </svg> */}
                 </div>
                 <hr className='w-full' />
-                <div className="ml-4 flex flex-wrap w-full justify-between">
+                <div className="ml-4 flex flex-wrap w-full justify-start gap-6">
                     {loading && (<Loader />)}
                     {Todos.map((todo, index) => (
                         <Card index={index} todo={todo} updateTodos={updateTodos} bg={colors[index % colors.length]} />

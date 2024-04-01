@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div className="flex">
         <Nav />
-        <div className="flex w-full ml-[120px] flex-col justify-start pt-12 items-center gap-8">
+        <div className="flex w-full ml-[120px] mob-fix flex-col justify-start pt-12 items-center gap-8">
           <Search />
           <Routes>
             <Route path="/" element={<Mylogs />} />
