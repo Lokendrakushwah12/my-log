@@ -18,7 +18,7 @@ const Card = ({ todo, index, updateTodos, bg }) => {
     // };
 
     const handleComplete = async (id) => {
-        console.log(id);
+        // console.log(id);
         await fetch('https://my-log-backend.onrender.com/completed', {
             method: 'PUT',
             headers: {

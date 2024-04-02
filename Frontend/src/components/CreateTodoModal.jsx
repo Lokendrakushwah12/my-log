@@ -31,7 +31,7 @@ const CreateTodoModal = ({ closeModal, updateTodos }) => {
         } else {
             setDeadlineError(false);
         }
-
+        closeModal();
         await fetch('https://my-log-backend.onrender.com/todo', {
             method: 'POST',
             headers: {
@@ -46,10 +46,9 @@ const CreateTodoModal = ({ closeModal, updateTodos }) => {
         })
             .then(async (response) => {
                 const data = await response.json();
-                console.log(data);
+                // console.log(data);
                 if (response.ok) {
                     // updateTodos();
-                    closeModal();
                 }
             })
     }

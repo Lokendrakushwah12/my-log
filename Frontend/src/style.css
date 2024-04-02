@@ -37,6 +37,9 @@ code {
   .width-100 {
     width: 70px;
   }
+  .with{
+    width: 100%;
+  }
 
   .grp {
     width: 700px;

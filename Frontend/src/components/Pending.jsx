@@ -52,8 +52,7 @@ const Pending = () => {
                 </div>
                 <hr className='w-full' />
                 <div className="ml-4 flex flex-wrap w-full justify-start gap-6">
-                    {loading && (<Loader />)}
-                    {Todos.map((todo, index) => (
+                    {loading ? <Loader /> : Todos.map((todo, index) => (
                         <Card index={index} todo={todo} updateTodos={updateTodos} bg={colors[(index + 4) % colors.length]} />
                     ))}
                 </div>
